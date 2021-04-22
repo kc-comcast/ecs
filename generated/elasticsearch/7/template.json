@@ -2864,6 +2864,67 @@
           }
         }
       },
+      "ticket": {
+        "properties": {
+          "assignee": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "created": {
+            "type": "date"
+          },
+          "description": {
+            "properties": {
+              "long": {
+                "norms": false,
+                "type": "text"
+              },
+              "short": {
+                "norms": false,
+                "type": "text"
+              }
+            }
+          },
+          "details": {
+            "type": "object"
+          },
+          "number": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "priority": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "requester": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "severity": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "state": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "status": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "submitter": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "tags": {
+            "type": "object"
+          },
+          "type": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          }
+        }
+      },
       "tls": {
         "properties": {
           "cipher": {

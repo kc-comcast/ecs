@@ -7217,7 +7217,11 @@ example: `https://attack.mitre.org/techniques/T1059/001/`
 [[ecs-ticket]]
 === Ticket Fields
 
-Fields related to tickets from a ticketing system. These fields focus on common ticket attributes in a ticketing system with a section to provide extended field support.
+A ticket is defined as a documented record of any form of request or reported issue.
+
+Tickets can be associated with hardware, software, access, procurement, etc. requests. They can also be associated with ITIL /ITSM support processes
+
+Ticket fields provide key basic details about the ticket itself.
 
 [discrete]
 ==== Ticket Field Details
@@ -7254,7 +7258,7 @@ type: date
 
 
 
-example: `2021-03-09T17:05:23.773Z`
+example: `2021-03-09 17:05:23.773000+00:00`
 
 | core
 
@@ -7270,8 +7274,7 @@ type: text
 
 
 
-example: `A fiber cut has occurred in Springfield due to a down telephone pole.  All internet and
-IP related services are down diddly offline. Customer call in-rates are elevated.`
+example: `A fiber cut has occurred in Springfield due to a down telephone pole.  All internet and IP related services are down diddly offline. Customer call in-rates are elevated.`
 
 | core
 
@@ -7299,7 +7302,7 @@ example: `Fiber cut in Springfield - internet service down`
 
 | Custom key/value pairs.
 
-Can be used to add meta information about the ticket, or include additional customized ticket fields. Should not contain nested objects
+Can be used to add meta information about the ticket, or include additional customized ticket fields. Should not contain nested objects.
 
 All values are stored as keyword.
 
@@ -7308,26 +7311,6 @@ type: object
 
 
 example: `{"affected_version": "1.2.3", "env": "production", "resolution": "unresolved", "service": "Internet"}`
-
-| extended
-
-// ===============================================================
-
-|
-[[field-ticket-labels]]
-<<field-ticket-labels, ticket.labels>>
-
-| List/Array of tag attributes which may be assigned to the ticket.
-
-Alias to the `tags` attribute for a ticket.  Some ticketing systems refer to "tags" as "labels".
-
-All values stored as keyword.
-
-type: alias
-
-
-
-example: `["production", "env2", "Sprint 10"]`
 
 | extended
 
@@ -7369,7 +7352,7 @@ example: `P1`
 [[field-ticket-requester]]
 <<field-ticket-requester, ticket.requester>>
 
-| Name of person or group whom the request is for.
+| The name of the person or group that is making the request.  Can be different than the person or group who submitted the ticket.
 
 type: keyword
 
@@ -7451,9 +7434,12 @@ example: `Jane Doe`
 
 | List/Array of tag attributes which may be assigned to the ticket.
 
-All values stored as keyword.
+All values are stored as keyword.
 
-type: keyword
+type: object
+
+
+Note: this field should contain an array of values.
 
 
 

@@ -68,17 +68,6 @@
 
         All values are stored as keyword.
 
-    - name: labels
-      level: extended
-      type: alias
-      path: tags
-      short: Alias for `tags` attribute.
-      description: >
-        Alias to the `tags` attribute for a ticket.  Some ticketing systems refer to "tags"
-        as "labels".
-
-        All values are stored as keyword.
-
     - name: number
       level: core
       type: keyword

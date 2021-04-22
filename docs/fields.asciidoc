@@ -92,6 +92,8 @@ all fields are defined.
 
 | <<ecs-threat,Threat>> | Fields to classify events and alerts according to a threat taxonomy.
 
+| <<ecs-ticket,Ticket>> | Fields describing details of a ticket.
+
 | <<ecs-tls,TLS>> | Fields describing a TLS connection.
 
 | <<ecs-tracing,Tracing>> | Fields related to distributed tracing.

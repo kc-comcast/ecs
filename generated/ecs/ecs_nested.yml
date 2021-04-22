@@ -9117,6 +9117,194 @@ threat:
   short: Fields to classify events and alerts according to a threat taxonomy.
   title: Threat
   type: group
+ticket:
+  description: 'A ticket is defined as a documented record of any form of request
+    or reported issue.
+
+    Tickets can be associated with hardware, software, access, procurement, etc. requests.
+    They can also be associated with ITIL /ITSM support processes
+
+    Ticket fields provide key basic details about the ticket itself.'
+  fields:
+    ticket.assignee:
+      dashed_name: ticket-assignee
+      description: Name of the person or group with whom the ticket is currently assigned.
+      example: Sector_7-G_Safety_Desk
+      flat_name: ticket.assignee
+      ignore_above: 1024
+      level: extended
+      name: assignee
+      normalize: []
+      short: Assigned to name
+      type: keyword
+    ticket.created:
+      dashed_name: ticket-created
+      description: Timestamp the ticket was created.
+      example: 2021-03-09 17:05:23.773000+00:00
+      flat_name: ticket.created
+      level: core
+      name: created
+      normalize: []
+      short: Timestamp the ticket was created
+      type: date
+    ticket.description.long:
+      dashed_name: ticket-description-long
+      description: Long description / body of the ticket.  Typically contains all
+        details and specifics of the ticket.
+      example: A fiber cut has occurred in Springfield due to a down telephone pole.  All
+        internet and IP related services are down diddly offline. Customer call in-rates
+        are elevated.
+      flat_name: ticket.description.long
+      level: core
+      name: description.long
+      normalize: []
+      norms: false
+      short: Long description of the ticket
+      type: text
+    ticket.description.short:
+      dashed_name: ticket-description-short
+      description: Short description / title of the ticket.  Typically, a brief overview.
+      example: Fiber cut in Springfield - internet service down
+      flat_name: ticket.description.short
+      level: core
+      name: description.short
+      normalize: []
+      norms: false
+      short: Short description of the ticket
+      type: text
+    ticket.details:
+      dashed_name: ticket-details
+      description: 'Custom key/value pairs.
+
+        Can be used to add meta information about the ticket, or include additional
+        customized ticket fields. Should not contain nested objects.
+
+        All values are stored as keyword.'
+      example: '{"affected_version": "1.2.3", "env": "production", "resolution": "unresolved",
+        "service": "Internet"}'
+      flat_name: ticket.details
+      level: extended
+      name: details
+      normalize: []
+      object_type: keyword
+      short: Custom key/value pairs.
+      type: object
+    ticket.number:
+      dashed_name: ticket-number
+      description: Numeric or alphanumeric unique identifier of the ticket; typically
+        a ticket or record ID.
+      example: REQ-1234
+      flat_name: ticket.number
+      ignore_above: 1024
+      level: core
+      name: number
+      normalize: []
+      short: Ticket number
+      type: keyword
+    ticket.priority:
+      dashed_name: ticket-priority
+      description: Numeric or alphanumeric priority value assigned to the ticket.
+      example: P1
+      flat_name: ticket.priority
+      ignore_above: 1024
+      level: extended
+      name: priority
+      normalize: []
+      short: Priority of the ticket
+      type: keyword
+    ticket.requester:
+      dashed_name: ticket-requester
+      description: The name of the person or group that is making the request.  Can
+        be different than the person or group who submitted the ticket.
+      example: jdoe1234
+      flat_name: ticket.requester
+      ignore_above: 1024
+      level: extended
+      name: requester
+      normalize: []
+      short: Name of person or group whom the request is for
+      type: keyword
+    ticket.severity:
+      dashed_name: ticket-severity
+      description: Numeric or alphanumeric severity value assigned to the ticket.
+      example: 2 - High
+      flat_name: ticket.severity
+      ignore_above: 1024
+      level: extended
+      name: severity
+      normalize: []
+      short: Severity of the ticket
+      type: keyword
+    ticket.state:
+      dashed_name: ticket-state
+      description: Currently assigned state for the ticket.  May or may not be the
+        same as ticket status.
+      example: In-Progress
+      flat_name: ticket.state
+      ignore_above: 1024
+      level: extended
+      name: state
+      normalize: []
+      short: Current state of the ticket
+      type: keyword
+    ticket.status:
+      dashed_name: ticket-status
+      description: Currently assigned status for the ticket.  May or may not be the
+        same as ticket state.
+      example: Blocked
+      flat_name: ticket.status
+      ignore_above: 1024
+      level: extended
+      name: status
+      normalize: []
+      short: Current status of the ticket
+      type: keyword
+    ticket.submitter:
+      dashed_name: ticket-submitter
+      description: The name of the person or group that submitted the request.  Can
+        be different than the person or group that is the requester of the ticket.
+      example: Jane Doe
+      flat_name: ticket.submitter
+      ignore_above: 1024
+      level: core
+      name: submitter
+      normalize: []
+      short: Name of person or group whom submitted the ticket
+      type: keyword
+    ticket.tags:
+      dashed_name: ticket-tags
+      description: 'List/Array of tag attributes which may be assigned to the ticket.
+
+        All values are stored as keyword.'
+      example: '["production", "env2", "Sprint 10"]'
+      flat_name: ticket.tags
+      level: extended
+      name: tags
+      normalize:
+      - array
+      object_type: keyword
+      short: List of tags assigned to the ticket
+      type: object
+    ticket.type:
+      dashed_name: ticket-type
+      description: The type categorization of the ticket.
+      example: Change
+      flat_name: ticket.type
+      ignore_above: 1024
+      level: core
+      name: type
+      normalize: []
+      short: Type of ticket
+      type: keyword
+  footnote: 'Ticket types include, but are not limited to: Alarm, Event, Incident,
+    Problem, Case, Bug, Feature Request, Task, Epic, User Story, Knowledge Article,
+    Change Request, etc.'
+  group: 2
+  name: ticket
+  prefix: ticket.
+  short: Fields describing details of a ticket.
+  title: Ticket
+  type: group
 tls:
   description: Fields related to a TLS connection. These fields focus on the TLS protocol
     itself and intentionally avoids in-depth analysis of the related x.509 certificate

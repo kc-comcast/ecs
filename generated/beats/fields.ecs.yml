@@ -5248,6 +5248,132 @@
         \ use a MITRE ATT&CK\xAE subtechnique, for example. (ex. https://attack.mitre.org/techniques/T1059/001/)"
       example: https://attack.mitre.org/techniques/T1059/001/
       default_field: false
+  - name: ticket
+    title: Ticket
+    group: 2
+    description: 'A ticket is defined as a documented record of any form of request
+      or reported issue.
+
+      Tickets can be associated with hardware, software, access, procurement, etc.
+      requests. They can also be associated with ITIL /ITSM support processes
+
+      Ticket fields provide key basic details about the ticket itself.'
+    footnote: 'Ticket types include, but are not limited to: Alarm, Event, Incident,
+      Problem, Case, Bug, Feature Request, Task, Epic, User Story, Knowledge Article,
+      Change Request, etc.'
+    type: group
+    fields:
+    - name: assignee
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Name of the person or group with whom the ticket is currently assigned.
+      example: Sector_7-G_Safety_Desk
+      default_field: false
+    - name: created
+      level: core
+      type: date
+      description: Timestamp the ticket was created.
+      example: 2021-03-09 17:05:23.773000+00:00
+      default_field: false
+    - name: description.long
+      level: core
+      type: text
+      description: Long description / body of the ticket.  Typically contains all
+        details and specifics of the ticket.
+      example: A fiber cut has occurred in Springfield due to a down telephone pole.  All
+        internet and IP related services are down diddly offline. Customer call in-rates
+        are elevated.
+      default_field: false
+    - name: description.short
+      level: core
+      type: text
+      description: Short description / title of the ticket.  Typically, a brief overview.
+      example: Fiber cut in Springfield - internet service down
+      default_field: false
+    - name: details
+      level: extended
+      type: object
+      object_type: keyword
+      description: 'Custom key/value pairs.
+
+        Can be used to add meta information about the ticket, or include additional
+        customized ticket fields. Should not contain nested objects.
+
+        All values are stored as keyword.'
+      example: '{"affected_version": "1.2.3", "env": "production", "resolution": "unresolved",
+        "service": "Internet"}'
+      default_field: false
+    - name: number
+      level: core
+      type: keyword
+      ignore_above: 1024
+      description: Numeric or alphanumeric unique identifier of the ticket; typically
+        a ticket or record ID.
+      example: REQ-1234
+      default_field: false
+    - name: priority
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Numeric or alphanumeric priority value assigned to the ticket.
+      example: P1
+      default_field: false
+    - name: requester
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: The name of the person or group that is making the request.  Can
+        be different than the person or group who submitted the ticket.
+      example: jdoe1234
+      default_field: false
+    - name: severity
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Numeric or alphanumeric severity value assigned to the ticket.
+      example: 2 - High
+      default_field: false
+    - name: state
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Currently assigned state for the ticket.  May or may not be the
+        same as ticket status.
+      example: In-Progress
+      default_field: false
+    - name: status
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Currently assigned status for the ticket.  May or may not be the
+        same as ticket state.
+      example: Blocked
+      default_field: false
+    - name: submitter
+      level: core
+      type: keyword
+      ignore_above: 1024
+      description: The name of the person or group that submitted the request.  Can
+        be different than the person or group that is the requester of the ticket.
+      example: Jane Doe
+      default_field: false
+    - name: tags
+      level: extended
+      type: object
+      object_type: keyword
+      description: 'List/Array of tag attributes which may be assigned to the ticket.
+
+        All values are stored as keyword.'
+      example: '["production", "env2", "Sprint 10"]'
+      default_field: false
+    - name: type
+      level: core
+      type: keyword
+      ignore_above: 1024
+      description: The type categorization of the ticket.
+      example: Change
+      default_field: false
   - name: tls
     title: TLS
     group: 2

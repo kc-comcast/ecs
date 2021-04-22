@@ -602,6 +602,20 @@ ECS_Version,Indexed,Field_Set,Field,Type,Level,Normalization,Example,Description
 2.0.0-dev,true,threat,threat.technique.subtechnique.name,keyword,extended,array,PowerShell,Threat subtechnique name.
 2.0.0-dev,true,threat,threat.technique.subtechnique.name.text,text,extended,,PowerShell,Threat subtechnique name.
 2.0.0-dev,true,threat,threat.technique.subtechnique.reference,keyword,extended,array,https://attack.mitre.org/techniques/T1059/001/,Threat subtechnique URL reference.
+2.0.0-dev,true,ticket,ticket.assignee,keyword,extended,,Sector_7-G_Safety_Desk,Assigned to name
+2.0.0-dev,true,ticket,ticket.created,date,core,,2021-03-09 17:05:23.773000+00:00,Timestamp the ticket was created
+2.0.0-dev,true,ticket,ticket.description.long,text,core,,A fiber cut has occurred in Springfield due to a down telephone pole.  All internet and IP related services are down diddly offline. Customer call in-rates are elevated.,Long description of the ticket
+2.0.0-dev,true,ticket,ticket.description.short,text,core,,Fiber cut in Springfield - internet service down,Short description of the ticket
+2.0.0-dev,true,ticket,ticket.details,object,extended,,"{""affected_version"": ""1.2.3"", ""env"": ""production"", ""resolution"": ""unresolved"", ""service"": ""Internet""}",Custom key/value pairs.
+2.0.0-dev,true,ticket,ticket.number,keyword,core,,REQ-1234,Ticket number
+2.0.0-dev,true,ticket,ticket.priority,keyword,extended,,P1,Priority of the ticket
+2.0.0-dev,true,ticket,ticket.requester,keyword,extended,,jdoe1234,Name of person or group whom the request is for
+2.0.0-dev,true,ticket,ticket.severity,keyword,extended,,2 - High,Severity of the ticket
+2.0.0-dev,true,ticket,ticket.state,keyword,extended,,In-Progress,Current state of the ticket
+2.0.0-dev,true,ticket,ticket.status,keyword,extended,,Blocked,Current status of the ticket
+2.0.0-dev,true,ticket,ticket.submitter,keyword,core,,Jane Doe,Name of person or group whom submitted the ticket
+2.0.0-dev,true,ticket,ticket.tags,object,extended,array,"[""production"", ""env2"", ""Sprint 10""]",List of tags assigned to the ticket
+2.0.0-dev,true,ticket,ticket.type,keyword,core,,Change,Type of ticket
 2.0.0-dev,true,tls,tls.cipher,keyword,extended,,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,String indicating the cipher used during the current connection.
 2.0.0-dev,true,tls,tls.client.certificate,keyword,extended,,MII...,PEM-encoded stand-alone certificate offered by the client.
 2.0.0-dev,true,tls,tls.client.certificate_chain,keyword,extended,array,"[""MII..."", ""MII...""]",Array of PEM-encoded certificates that make up the certificate chain offered by the client.
