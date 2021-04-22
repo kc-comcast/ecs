@@ -7214,6 +7214,273 @@ example: `https://attack.mitre.org/techniques/T1059/001/`
 
 |=====
 
+[[ecs-ticket]]
+=== Ticket Fields
+
+Fields related to tickets from a ticketing system. These fields focus on common ticket attributes in a ticketing system with a section to provide extended field support.
+
+[discrete]
+==== Ticket Field Details
+
+[options="header"]
+|=====
+| Field  | Description | Level
+
+// ===============================================================
+
+|
+[[field-ticket-assignee]]
+<<field-ticket-assignee, ticket.assignee>>
+
+| Name of the person or group with whom the ticket is currently assigned.
+
+type: keyword
+
+
+
+example: `Sector_7-G_Safety_Desk`
+
+| extended
+
+// ===============================================================
+
+|
+[[field-ticket-created]]
+<<field-ticket-created, ticket.created>>
+
+| Timestamp the ticket was created.
+
+type: date
+
+
+
+example: `2021-03-09T17:05:23.773Z`
+
+| core
+
+// ===============================================================
+
+|
+[[field-ticket-description-long]]
+<<field-ticket-description-long, ticket.description.long>>
+
+| Long description / body of the ticket.  Typically contains all details and specifics of the ticket.
+
+type: text
+
+
+
+example: `A fiber cut has occurred in Springfield due to a down telephone pole.  All internet and
+IP related services are down diddly offline. Customer call in-rates are elevated.`
+
+| core
+
+// ===============================================================
+
+|
+[[field-ticket-description-short]]
+<<field-ticket-description-short, ticket.description.short>>
+
+| Short description / title of the ticket.  Typically, a brief overview.
+
+type: text
+
+
+
+example: `Fiber cut in Springfield - internet service down`
+
+| core
+
+// ===============================================================
+
+|
+[[field-ticket-details]]
+<<field-ticket-details, ticket.details>>
+
+| Custom key/value pairs.
+
+Can be used to add meta information about the ticket, or include additional customized ticket fields. Should not contain nested objects
+
+All values are stored as keyword.
+
+type: object
+
+
+
+example: `{"affected_version": "1.2.3", "env": "production", "resolution": "unresolved", "service": "Internet"}`
+
+| extended
+
+// ===============================================================
+
+|
+[[field-ticket-labels]]
+<<field-ticket-labels, ticket.labels>>
+
+| List/Array of tag attributes which may be assigned to the ticket.
+
+Alias to the `tags` attribute for a ticket.  Some ticketing systems refer to "tags" as "labels".
+
+All values stored as keyword.
+
+type: alias
+
+
+
+example: `["production", "env2", "Sprint 10"]`
+
+| extended
+
+// ===============================================================
+
+|
+[[field-ticket-number]]
+<<field-ticket-number, ticket.number>>
+
+| Numeric or alphanumeric unique identifier of the ticket; typically a ticket or record ID.
+
+type: keyword
+
+
+
+example: `REQ-1234`
+
+| core
+
+// ===============================================================
+
+|
+[[field-ticket-priority]]
+<<field-ticket-priority, ticket.priority>>
+
+| Numeric or alphanumeric priority value assigned to the ticket.
+
+type: keyword
+
+
+
+example: `P1`
+
+| extended
+
+// ===============================================================
+
+|
+[[field-ticket-requester]]
+<<field-ticket-requester, ticket.requester>>
+
+| Name of person or group whom the request is for.
+
+type: keyword
+
+
+
+example: `jdoe1234`
+
+| extended
+
+// ===============================================================
+
+|
+[[field-ticket-severity]]
+<<field-ticket-severity, ticket.severity>>
+
+| Numeric or alphanumeric severity value assigned to the ticket.
+
+type: keyword
+
+
+
+example: `2 - High`
+
+| extended
+
+// ===============================================================
+
+|
+[[field-ticket-state]]
+<<field-ticket-state, ticket.state>>
+
+| Currently assigned state for the ticket.  May or may not be the same as ticket status.
+
+type: keyword
+
+
+
+example: `In-Progress`
+
+| extended
+
+// ===============================================================
+
+|
+[[field-ticket-status]]
+<<field-ticket-status, ticket.status>>
+
+| Currently assigned status for the ticket.  May or may not be the same as ticket state.
+
+type: keyword
+
+
+
+example: `Blocked`
+
+| extended
+
+// ===============================================================
+
+|
+[[field-ticket-submitter]]
+<<field-ticket-submitter, ticket.submitter>>
+
+| The name of the person or group that submitted the request.  Can be different than the person or group that is the requester of the ticket.
+
+type: keyword
+
+
+
+example: `Jane Doe`
+
+| core
+
+// ===============================================================
+
+|
+[[field-ticket-tags]]
+<<field-ticket-tags, ticket.tags>>
+
+| List/Array of tag attributes which may be assigned to the ticket.
+
+All values stored as keyword.
+
+type: keyword
+
+
+
+example: `["production", "env2", "Sprint 10"]`
+
+| extended
+
+// ===============================================================
+
+|
+[[field-ticket-type]]
+<<field-ticket-type, ticket.type>>
+
+| The type categorization of the ticket.
+
+type: keyword
+
+
+
+example: `Change`
+
+| core
+
+// ===============================================================
+
+|=====
+
 [[ecs-tls]]
 === TLS Fields
 
